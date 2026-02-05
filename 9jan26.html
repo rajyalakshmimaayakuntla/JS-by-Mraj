@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>To Do List</h3>
+    <h4 id="d3"></h4>
+    <input Type="text" id="d1"></input>
+    <button onClick="add()">Add To Do</button>
+    <ul id="d2"></ul>
+    <button id="btn" onClick="del()">Delete</button>
+</body>
+<script>
+   var arr=[]
+   function add()
+   {
+    var str=document.getElementById("d1").value
+    arr.push(str)
+    genUI()
+    var tb=document.getElementById("d1")
+    tb.value=""
+   }
+   function genUI(){
+    var ul=document.getElementById("d2")
+    ul.innerHTML=""
+    arr.forEach(function(a){
+    var li=document.createElement("li")
+    li.innerText=a+document.getElementById("btn")
+    document.getElementById("d2").appendChild(li)
+    })
+function del(){
+    
+}
+   }
+
+</script>
+</html>

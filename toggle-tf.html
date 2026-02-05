@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button,p {
+          display:inline-block
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggle()">Toggle</button>
+    <p id="text">False</p>
+</body>
+<script>
+    var i=0
+    var b=document.getElementById("text")
+    function toggle(){
+        if(i%2==0){
+           b.innerText="True"
+           i+=1
+        }
+        else{
+            b.innerText="False"
+            i+=1
+        }
+    }
+    
+</script>
+</html>

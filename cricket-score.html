@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cir{
+        width: 50px;
+        height: 70px;
+        border-radius:50% ;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+
+    }
+    #circle{
+        height: 70px;
+        display:flex
+    }
+</style>
+<body>
+    <div id="circle"></div>
+    <h2 id="s">Score:0:0</h2>
+    <button id="0" onclick="addRun(0)">0</button>
+    <button id="1" onclick="addRun(1)">1</button>
+    <button id="2" onclick="addRun(2)">2</button>
+    <button id="3" onclick="addRun(3)">3</button>
+    <button id="4" onclick="addRun(4)">4</button>
+    <button id="5" onclick="addRun(5)">5</button>
+    <button id="6" onclick="addRun(6)">6</button>
+    <button id="wi" onclick="wide()">Wide</button>
+    <button id="wic" onclick="addWick(1)">Wicket</button>
+</body>
+<script>
+    var runs=0
+    var wickets=0
+    function addRun(val){
+        var c=document.createElement("div")
+        c.className="cir"
+        c.style.border="2px solid black"
+      runs+=val
+      updatescore()
+      if(val==0){
+        c.style.background="white"
+        c.innerText="0"
+      }
+    if(val==1){
+        c.style.background="skyblue"
+        c.innerText="1"
+      }
+      if(val==2){
+        c.style.background="blue"
+        c.innerText="2"
+      }
+      if(val==3){
+        c.style.background="darkblue"
+        c.innerText="3"
+      }
+      if(val==4){
+        c.style.background="lightgreen"
+        c.innerText="4"
+      }
+      if(val==5){
+        c.style.background="green"
+        c.innerText="5"
+      }
+      if(val==6){
+        c.style.background="darkgreen"
+        c.innerText="6"
+      }
+
+        document.getElementById("circle").appendChild(c)
+
+
+    }
+    function addWick(val){
+    wickets+=val
+    updatescore() 
+    var c=document.createElement("div")
+    c.className="cir"
+    c.style.border="2px solid black"
+    c.style.background="red"
+    c.style.borderRadius="50%"
+    c.style.width="90px"
+    c.style.height="70px"
+    c.innerText="Wicket"
+    document.getElementById("circle").appendChild(c)
+
+    }
+    function updatescore(){
+     document.getElementById("s").innerText=`Score:${runs}:${wickets}`   
+    }
+    function wide(){
+       var c=document.createElement("div")
+       c.className="cir"
+       c.style.border="2px solid black"
+       runs+=1
+      updatescore() 
+        c.style.background="babypink"
+        c.style.borderRadius="50%"
+        c.style.width="90px"
+        c.style.height="70px"
+        c.innerText="Wide"
+        document.getElementById("circle").appendChild(c)
+
+      }        
+</script>
+</html>

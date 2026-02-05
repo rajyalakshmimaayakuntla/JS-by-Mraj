@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap{
+        width:600px;
+    }
+    .but{
+        margin-top:2px;
+        display: flex;
+        justify-content:space-between;
+    }
+</style>
+<body>
+    <div class="wrap">
+      <img id="img" width="600px" height="400px" >
+      <div class="but">
+        <button id="pre" onclick="prev()" >Prev</button>
+        <button id="nxt" onclick="next()" >Next</button>
+      </div>
+    </div>
+    <h4 id="msg"></h4>
+</body>
+<script>
+    var ind=1
+    document.getElementById("img").src="https://i.postimg.cc/0b6fkBG2/dosa.jpg"
+    var imgarr=["https://i.postimg.cc/0b6fkBG2/dosa.jpg","https://i.postimg.cc/XGRvwqh3/puri.jpg","https://i.postimg.cc/dhfc7Xpp/idli.jpg",
+                "https://i.postimg.cc/4NRm1Mrf/vada.jpg","https://i.postimg.cc/Lnqrcvnt/upma.jpg","https://i.postimg.cc/sMY0zLyZ/full-meals.jpg",
+                "https://i.postimg.cc/Dm46FNPJ/biryani.jpg","https://i.postimg.cc/fVyJnGx4/maggie.jpg","https://i.postimg.cc/vgF73rcq/gobi.jpg",
+                "https://i.postimg.cc/4nwt9kb8/pasta.jpg","https://i.postimg.cc/tYws3X1k/samosa.jpg","https://i.postimg.cc/0My5g3Mx/pani-puri.jpg",
+                "https://i.postimg.cc/njrxSD56/roti.jpg","https://i.postimg.cc/Q99PWkvg/ice-cream.jpg","https://i.postimg.cc/B8dpRWwb/bindu.jpg"]
+    function next(){
+        if(ind<imgarr.length-1){
+            document.getElementById("msg").innerHTML=""
+            ind++
+            document.getElementById("img").src=imgarr[ind]  
+        }
+        else{
+          document.getElementById("msg").innerHTML="Items are completed"  
+        }
+    }
+    function prev(){
+        if(ind>0){
+            document.getElementById("msg").innerHTML=""
+            ind--
+            document.getElementById("img").src=imgarr[ind] 
+        }
+        else{
+          document.getElementById("msg").innerHTML="Items are completed"  
+        }
+    }
+</script>
+</html>

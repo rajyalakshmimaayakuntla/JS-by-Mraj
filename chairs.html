@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4> Occupied: <span id="occ"></span></h4>
+    <h4> Available: <span id="avail"> </span> </h4>
+    <button id="chair" style="border:none;background:none">
+        <img id="i1" data-state="free" onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+        <img id="i2" data-state="free"  onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+        <img id="i3" data-state="free"  onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+        <img id="i4" data-state="free"  onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+        <img id="i5" data-state="free" onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+        <img id="i6" data-state="free"  onclick="status(this)" src="https://i.postimg.cc/8sXWRdLR/trend-chair.jpg">
+
+    </button>
+</body>
+<script>    
+var oc=0
+var av=6
+function status(i){
+    if(i.dataset.state=="free"){
+    i.style.filter="blur(5px)"
+    i.dataset.state="busy"
+    oc++
+    av--
+}
+  else{
+    i.style.filter="blur(0px)"
+    i.dataset.state="free"
+    av++
+    oc--
+
+    }
+    document.getElementById("occ").innerHTML=+oc
+    document.getElementById("avail").innerHTML=+6-oc 
+  }
+</script>
+</html>

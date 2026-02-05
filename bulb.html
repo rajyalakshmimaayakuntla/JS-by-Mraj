@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <img src="https://i.postimg.cc/DS19KqGH/off-bulb.jpg" id="i" width="300px" height="300px">
+  <img src="https://i.postimg.cc/PCKCK8xP/bulb-on.jpg" id="i1" width="300px" height="300px">
+<button id="btn" onclick="toggle()">ON</button>
+</body>
+<script>
+    var i=0
+    document.getElementById("i1").style.display="none"
+    document.getElementById("i").style.display="block"
+    function toggle()
+    {
+       if(i%2==0){
+        document.getElementById("i1").style.display="block"
+        document.getElementById("i").style.display="none"
+        document.getElementById("btn").innerText="OFF"
+        i++
+       }
+       else{
+        document.getElementById("i").style.display="block"
+        document.getElementById("i1").style.display="none"
+        document.getElementById("btn").innerText="ON"
+        i++
+       }
+    }
+</script>
+</html>

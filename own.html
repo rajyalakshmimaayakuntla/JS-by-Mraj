@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+   <div id="id"></div> 
+   <script>
+    arr=[
+        "C:\Users\HP\Pictures\Saved Pictures\manu3.jpg",
+        "C:\Users\HP\Pictures\Saved Pictures\manu4.jpg",
+         "C:\Users\HP\Pictures\Saved Pictures\manu1.jpg"
+    ]
+    var im=document.getElementById("id")
+    for (var i=0;i<arr.length;i++){
+        var img=document.createElement("img")
+        img.src=arr[i]
+        im.appendChild(img)
+    }
+   </script>
+</body>
+</html>

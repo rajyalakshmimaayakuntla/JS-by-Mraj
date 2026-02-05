@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact App</title>
+
+<style>
+#msg{
+  color: red;
+}
+.contact-box{
+  width: 400px;
+  height: 250px;
+  background-color: yellow;
+  text-align: center;
+  border: 2px solid red;
+  border-radius: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+.contact-box p{
+  text-align: left;
+  margin-left: 10px;
+}
+.contact-box img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 15px;
+}
+#name,#num,#email,#im,#add{
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.edit-btn{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<form id="cont-form">
+  <h4 id="msg"></h4>
+
+  <label>Name:</label>
+  <input type="text" id="name"><br>
+
+  <label>Number:</label>
+  <input type="text" id="num"><br>
+
+  <label>Email:</label>
+  <input type="text" id="email"><br>
+
+  <label>Image:</label>
+  <input type="file" id="im"><br>
+
+  <button type="button" id="add" onclick="addcont()">Add To Contacts</button>
+
+  <div id="conts"></div>
+</form>
+
+<script>
+var editingBox = null
+
+function addcont() {
+
+  var nameInput = document.getElementById("name")
+  var numInput = document.getElementById("num")
+  var emailInput = document.getElementById("email")
+  var imgInput = document.getElementById("im")
+  var msg = document.getElementById("msg")
+
+  if (nameInput.value === "" || numInput.value === "" || emailInput.value === "") {
+    msg.innerText = "Please fill all fields"
+    return
+  }
+
+  msg.innerText = ""
+
+  // 🔁 UPDATE MODE
+  if (editingBox !== null) {
+
+    editingBox.querySelector("p:nth-of-type(1) span").innerText = nameInput.value
+    editingBox.querySelector("p:nth-of-type(2) span").innerText = numInput.value
+    editingBox.querySelector("p:nth-of-type(3) span").innerText = emailInput.value
+
+    if (imgInput.files.length !== 0) {
+      editingBox.querySelector("img").src =
+        URL.createObjectURL(imgInput.files[0])
+    }
+
+    editingBox = null
+    document.getElementById("add").innerText = "Add To Contacts"
+    document.getElementById("cont-form").reset()
+    return
+  }
+
+  // ➕ ADD NEW CONTACT
+  if (imgInput.files.length === 0) {
+    msg.innerText = "Please select an image"
+    return
+  }
+
+  var box = document.createElement("div")
+  box.className = "contact-box"
+
+  var img = document.createElement("img")
+  img.src = URL.createObjectURL(imgInput.files[0])
+  box.appendChild(img)
+
+  var p1 = document.createElement("p")
+  p1.innerHTML = "<strong>Name:</strong> <span>" + nameInput.value + "</span>"
+  box.appendChild(p1)
+
+  var p2 = document.createElement("p")
+  p2.innerHTML = "<strong>Number:</strong> <span>" + numInput.value + "</span>"
+  box.appendChild(p2)
+
+  var p3 = document.createElement("p")
+  p3.innerHTML = "<strong>Email:</strong> <span>" + emailInput.value + "</span>"
+  box.appendChild(p3)
+
+  var editBtn = document.createElement("button")
+  editBtn.innerText = "Edit"
+  editBtn.className = "edit-btn"
+  box.appendChild(editBtn)
+
+  editBtn.onclick = function () {
+    nameInput.value = p1.querySelector("span").innerText
+    numInput.value = p2.querySelector("span").innerText
+    emailInput.value = p3.querySelector("span").innerText
+
+    editingBox = box
+    document.getElementById("add").innerText = "Update Contact"
+  }
+
+  document.getElementById("conts").appendChild(box)
+  document.getElementById("cont-form").reset()
+}
+</script>
+
+</body>
+</html>

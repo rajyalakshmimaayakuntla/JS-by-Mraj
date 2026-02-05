@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #list li{
+        display: flex;
+        gap:15px;
+    }
+</style>
+<body>
+    <input type="text" id="task">
+    <button onclick="add()">Add Task</button> 
+    <ul id="list"></ul>
+</body>
+<script>
+    var c=0
+    function add(){
+    var l=document.createElement("li")
+    var text=document.createElement("span")
+    text.innerHTML=document.getElementById("task").value
+    l.appendChild(text)
+    var btn=document.createElement("button")
+    btn.innerText="Done"
+    btn.onclick=function done(){
+        if(c){
+        btn.innerText="Undo"
+        text.style.textDecoration="line-through"
+        b.disabled=false
+        c=0
+    }
+        else{
+            btn.innerText="Done"
+            b.disabled=true
+            text.style.textDecoration="none"
+
+            c=1
+        }
+    }
+    l.appendChild(btn)
+    var b=document.createElement("button")
+    b.innerText="Delete"
+    b.onclick=function de(){
+        l.remove()
+    }
+    l.appendChild(b)
+    b.disabled=true
+    document.getElementById("list").appendChild(l)
+    }
+</script>
+</html>

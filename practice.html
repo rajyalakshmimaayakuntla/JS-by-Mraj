@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    img {
+        width: 250;
+        height: 250px;
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="dis"></div>
+   <script>
+   var images=[
+         "https://www.gokitetours.com/wp-content/uploads/2025/01/Top-10-Beaches-in-Lakshadweep-You-Must-Visit-for-a-Dreamy-Escape-1200x720.webp",
+            "https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2021/11/11084636/Beaches-in-Mexico.jpg",
+            "https://production.media.dcx.clubmed/?url=https%3A%2F%2Fassets.dream.clubmed%2Fpm_7531_645_645555-qcy0f56l00-swhr.jpg"
+   ]
+   var dis=document.getElementById("dis");
+   for(var i=0;i<images.length;i++)
+   {
+    var imag=document.createElement("img");
+    imag.src=images[i];
+    dis.appendChild(imag)
+   }
+
+     </script> 
+</body>
+</html>

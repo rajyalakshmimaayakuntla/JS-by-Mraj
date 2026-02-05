@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .l,.d{
+        width: 300px;
+        height: 50px;
+        display: inline-block;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    #l1{
+        background-color: aquamarine;
+        border-radius: 5px;                                   
+    }
+    #l2{
+        background-color: burlywood;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    
+    
+    <h1>Like and DisLike Buttons</h1>
+    <div class="l">
+    <button id="l1"onclick="like()">Like</button>
+    <p id="lik"></p>
+    </div>
+    <div class="d">
+    <button id="l2" onclick="dislike()">DisLike</button>
+    <p id="dlik"></p>
+    </div>
+</body>
+<script>
+    var li=0
+    var dli=0
+    document.getElementById("lik").innerHTML=0
+    document.getElementById("dlik").innerHTML=0
+    function like(){
+        li++
+        document.getElementById("lik").innerHTML=li
+    }
+    function dislike(){
+      dli++
+      document.getElementById("dlik").innerHTML=dli 
+    }
+</script>
+</html>

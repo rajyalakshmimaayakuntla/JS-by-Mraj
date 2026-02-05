@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="2">
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>pin</td>
+                <td>city</td>
+                <td>marks</td>
+            </tr>
+        </thead>
+        <tbody id="d1"></tbody>
+    </table>
+</body>
+<script>
+    stu=[
+        {name:"Raji",pin:34,city:"ATP",marks:93},
+        {name:"uma",pin:35,city:"tdp",marks:85},
+        {name:"lakshmi",pin:12,city:"plvd",marks:95},
+        {name:"mythri",pin:25,city:"ndyl",marks:98}
+    ]
+    stu.forEach(function(s){
+     var ntr=document.createElement("tr")
+     var ntd=document.createElement("td")
+     ntd.innerText=s.name
+     ntr.appendChild(ntd)
+     document.getElementById("d1").appendChild(ntr)
+
+    })
+</script>
+</html>

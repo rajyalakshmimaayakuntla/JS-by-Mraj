@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4 id="msg"></h4>
+    <input type="text" id="url">
+    <button id="btn" onclick="sub()">Submit</button><br>
+    <img id="img" width="250px" heigth="250px"><br>
+</body>
+<script>
+    function sub(){
+        var i=document.getElementById("url")
+        var im=document.getElementById("img")
+
+        if(i){
+           document.getElementById("msg").innerText=""
+           im.src=i.value
+           im.style.display="block" 
+        }
+        if(i.value==""){
+           document.getElementById("msg").innerText="Please Enter a Valid URL!"
+        }
+    }
+</script>
+</html>

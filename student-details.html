@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: lightpink;
+    }
+    #b{
+        background-color:darkcyan;
+        border-radius: 7px;
+    }
+    #i{
+        width: 300px;
+        height: 35px;
+        font-size: medium;
+        border-radius: 10px;
+    }
+    #l{
+        color: red;
+        font-size: medium;
+    }
+</style>
+
+<body>
+<h1>Add Students</h1>
+<input id="i" type="text" placeholder="Enter Student Name">
+<button id="b" onclick="add()">Add</button>
+<ul id="l"></ul>
+<h4 id="msg"></h4>   
+</body>
+<script>
+function add(){
+    if(document.getElementById("i").value==""){
+        document.getElementById("msg").innerHTML="Pleae Enter Student Name"
+    }
+    else{
+    document.getElementById("msg").innerHTML=""
+    var nli=document.createElement("li")
+    nli.innerText=document.getElementById("i").value
+    document.getElementById("l").appendChild(nli)
+    }
+}
+</script>
+</html>

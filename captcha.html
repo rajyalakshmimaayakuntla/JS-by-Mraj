@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #capt{
+        color: green;
+        font-style: italic;
+    }
+</style>
+<body>
+    <h1 id="capt">3Gh4TYr</h1>
+    <input type="text" id="data">
+    <button onclick="sub()">Submit</button>
+</body>
+<script>
+function sub(){
+    if(document.getElementById("capt").innerText===document.getElementById("data").value){
+        alert("Your Captcha is Correct")
+    }
+    else{
+        alert("Your Captcha is Incorrect")
+    }
+}
+</script>
+</html>

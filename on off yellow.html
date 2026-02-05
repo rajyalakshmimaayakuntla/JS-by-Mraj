@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        margin-top:20px;
+    }
+    .box{
+        width:400px;
+        height:500px;
+        border:2px solid black;
+    }
+</style>
+<body>
+    <div class="box" id="tab"></div>
+    <button id="b1" onclick="on()">ON</button>
+    <button id="b2" onclick="off()">OFF</button>
+</body>
+<script>
+    function on(){
+        document.getElementById("b2").style.backgroundColor="white"
+        document.getElementById("b1").style.backgroundColor="red"
+        document.getElementById("tab").style.backgroundColor="yellow"
+    }
+    function off(){
+        document.getElementById("b1").style.backgroundColor="white"
+        document.getElementById("b2").style.backgroundColor="red"
+        document.getElementById("tab").style.backgroundColor="white"
+    }
+</script>
+</html>

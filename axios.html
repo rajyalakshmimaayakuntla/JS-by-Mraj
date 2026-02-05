@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6 id="pro"></h6>
+    <script>
+        axios("https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js")
+        .then(function (response){ return response.json()})
+        .then(function (data){data.products.forEach(function(p)
+            {
+            document.getElementById("pro").innerHTML+="<br>"+p.title
+        })
+    })
+    
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: rgb(2, 2, 43);
+        margin:0px;
+        padding:10px;
+    }
+    a{
+        color:rgb(120, 120, 170);
+    }
+    .sib{
+       width: 250px; 
+       min-height: 300px;
+       border:2px solid black;
+       text-align: left;
+       background-color:#09163b;
+       border-radius: 10px;
+       padding:30px;
+       color: whitesmoke;
+    }
+    .cont{
+        display: flex;
+        justify-content: center;
+        gap:10px;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }  
+    #palette, #text, #codeslash{
+       padding: 10px;
+       width:35px;
+       height: 35px;
+       border-radius:10px;
+       background-color: rgb(115, 115, 198)
+    }
+    #list{
+        list-style-type: none;
+        list-style-image:url("https://icons.getbootstrap.com/assets/icons/check-circle.svg");
+    }
+    .sib:hover{
+        transition:transform 0.5s;
+        transform:scale(1.03);
+        border:0.1px solid rgb(8, 8, 234);
+    }
+    .sib:hover img{
+        transition:transform 0.5s;
+        transform:scale(1.03);
+    }
+    @media screen and (max-width:768px){
+        .sib{
+            width: 45%;
+            gap:10px;
+        }
+    }
+    @media screen and (max-width:480px){
+        .sib{
+            width: 90%;
+            gap:10px;
+            flex-direction: column;
+        }
+    }
+
+</style>
+<body>
+    <div class="cont">
+        <div class="sib"> 
+            <img id="palette"src="https://icons.getbootstrap.com/assets/icons/palette.svg">
+            <h2>Brand Identity Design</h2>
+            <p>Create memorable brand experiences with strategic design that resonates with your target audience and sets you apart.</p>
+            <ul id="list">
+                <li>Logo & Visual Identity</li>
+                <li>Brand Guidelines</li>
+                <li>Marketing Materials</li>
+            </ul>
+            <a href="https://bootstrapmade.com/content/demo/Forma/service-details.html">Explore More--></a>
+        </div>
+        <div class="sib">
+            <img id="text"src="https://icons.getbootstrap.com/assets/icons/layout-text-window-reverse.svg">
+            <h2>UI/UX Design</h2>
+            <p>Design intuitive, user-centered interfaces that enhance engagement and deliver exceptional digital experiences.</p>
+            <ul id="list">
+                <li>User Research & Testing</li>
+                <li>Wireframing & Prototyping</li>
+                <li>Interaction Design</li>
+            </ul>
+            <a href="https://bootstrapmade.com/content/demo/Forma/service-details.html">Explore More--></a>
+        </div>
+        <div class="sib">
+           <img id="codeslash"src="http://icons.getbootstrap.com/assets/icons/code-slash.svg">
+           <h2>Web Development</h2>
+           <p>Build fast, scalable, and secure web applications using cutting-edge technologies and best development practices.</p>
+           <ul id="list">
+                <li>Custom Web Applications</li>
+                <li>E-commerce Solutions</li>
+                <li>API Integration</li>
+           </ul>
+           <a href="https://bootstrapmade.com/content/demo/Forma/service-details.html">Explore More--></a>
+        </div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6 id="text"></h6>
+    <button id="btn" onclick="next()">YES</button>
+    <script>
+        var s=0
+    function next(){
+      var http=new XMLHttpRequest()
+      http.open("GET","https://dummyjson.com/products",true)
+      http.send() 
+      http.onreadystatechange = function () {
+                if (http.readyState == 4) {
+                    var products = JSON.parse(http.response).products;
+                    products.forEach(function(obj){
+                      document.getElementById("text").innerHTML+="<br>"+obj.title
+                    })
+      
+    }
+}
+}
+    </script>
+</body>
+</html>
