@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-family:system-ui, -apple-system, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, "Noto Sans",
+               "Liberation Sans", sans-serif;
+    }
+    .cont{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /*margin-left: 40px;*/
+        /*border:2px solid black;*/ 
+    }
+    .i{
+        width: 70px;
+        height: 60px;
+        margin-bottom: 1px;
+    }
+    .head{
+        font-size: 50px;
+        margin-bottom: 1px;
+    }
+    p{
+    font-size: x-large;
+    color: rgb(84, 81, 81);
+    align-items: center;
+    padding: 10px;
+    }
+    .bs,.b1,.b2{
+        height: 50px;
+        font-size:20px ;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap:20px;
+        align-items: center;
+        border-radius: 10px;
+        flex-wrap: wrap;
+    }
+    .b1{
+        background-color: rgb(7, 148, 195);
+        border: 2px solid rgb(7, 143, 189);
+        color: lightgrey;
+    }
+    .b2{
+        border: 2px solid lightgrey;
+        background-color: white;
+        color:rgb(121, 120, 120); 
+    }
+    .b1:hover{
+        background-color: rgb(5, 116, 154);
+    }
+    .b2:hover{
+        background-color: darkgray;
+        color: white;
+    }
+    @media  screen and (min-width:1000px) {
+        p{
+            padding: 10px 300px;
+        }
+    }
+    @media screen  and (max-width:768px){
+        p{
+            max-width:800px
+        }
+        .b1,.b2{
+            max-width:350px;
+            width:90%;
+            display: flex;
+        }
+    }
+
+
+</style>
+<body>
+    <div class="cont">
+    <img class="i" src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg">
+    <h1 class="head">Centered Hero</h1>
+    <p>Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+    <div class="bs">
+    <button class="b1" onclick="prim()">Primary button</button>
+    <button class="b2" onclick="seco()">Secondary</button>
+    </div>
+    </div>
+</body>
+<script>
+    function prim()
+    {
+       document.querySelector(".b1").style.boxShadow="0px 0px 4px 4px rgb(5, 70, 70)";
+       document.querySelector(".b2").style.boxShadow="none";
+    }
+    function seco()
+    {
+       document.querySelector(".b2").style.boxShadow="0px 0px 4px 4px rgb(120, 120, 120)";
+       document.querySelector(".b1").style.boxShadow="none";
+    }
+</script>
+</html>

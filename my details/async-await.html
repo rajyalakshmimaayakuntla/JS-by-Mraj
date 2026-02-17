@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+async function addser(a,b){
+    let sum=0;
+  for(var i=a;i<=b;i++){
+   sum+=i;
+  }
+}
+async function asyn(){
+    return await addser(a,b);
+}
+asyn(1,1000000000).then(function(data){console.log(data);})
+console.log("Hi");
+</script>
+</html>

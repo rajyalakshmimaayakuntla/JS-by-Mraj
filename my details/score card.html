@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .bs{
+        display: flex;
+        gap: 0;
+    }
+</style>
+<body>
+    <h1>Score :<span id="sc"></span></h1>
+    <p><b>Score Line :<span id="sl"></span></b></p>
+    <div class="bs">
+    <button onclick="clik('.')">DOT</button>
+    <button onclick="clik(1)">1</button>
+    <button onclick="clik(2)">2</button>
+    <button onclick="clik(3)">3</button>
+    <button onclick="clik(4)">4</button>
+    <button onclick="clik(5)">5</button>
+    <button onclick="clik(6)">6</button>
+    <button onclick="clik('W')">W</button>
+    <button onclick="wide()">Wide</button>
+    <button onclick="nb()">noball</button>
+    </div>
+</body>
+<script>
+    let c=0;
+    var runs=0;
+    var wick=0;
+    function clik(val){
+        if(val=="W"){
+            wick++;
+            updatescore();
+        }
+        if(val>0 && val<=6){
+            runs+=val;
+            updatescore();
+        }
+        document.getElementById("sl").innerHTML+=" "+val;
+        c++;
+        if(c>=6){
+           document.getElementById("sl").innerHTML+=" "+"|"; 
+           c=0;
+        }
+    }
+    function wide(){
+        document.getElementById("sl").innerHTML+=" "+"1wd"; 
+    }
+    function nb(){
+        document.getElementById("sl").innerHTML+=" "+"1nb"; 
+    }
+    function updatescore(){
+       document.getElementById("sc").innerHTML=`${runs}/${wick}`
+    }   
+</script>
+</html>
