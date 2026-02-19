@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Today's To Do list</h1>
+    <input type="text" id="in" placeholder="Enter To Do">
+    <button onclick="add()">Add</button>
+    <ul id="uli"></ul>
+</body>
+<script>
+    function add(){
+        var l=document.createElement("li");
+        l.innerText=document.getElementById("in").value;
+        var b=document.createElement("button")
+        b.innerHTML="Delete";
+        b.onclick=function del(){
+        l.remove();
+    }
+        l.appendChild(b);
+        document.getElementById("uli").appendChild(l);
+    }
+    
+</script>
+</html>
